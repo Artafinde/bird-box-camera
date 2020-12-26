@@ -1,2 +1,4 @@
 https://hmbd.wordpress.com/2016/08/01/raspberry-pi-video-and-audio-recording-and-streaming-guide/
 Raspberry pi: Video and Audio recording and streaming guide
+
+https://www.tomshardware.com/uk/how-to/raspberry-pi-remote-control-camera-from-web
