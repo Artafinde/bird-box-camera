@@ -2,3 +2,13 @@ https://hmbd.wordpress.com/2016/08/01/raspberry-pi-video-and-audio-recording-and
 Raspberry pi: Video and Audio recording and streaming guide
 
 https://www.tomshardware.com/uk/how-to/raspberry-pi-remote-control-camera-from-web
+
+https://github.com/EbenKouao/pi-camera-stream-flask
+Info on turning on camera streaming at boot of pi
+
+https://www.e-tinkers.com/2018/04/how-to-control-raspberry-pi-gpio-via-http-web-server/
+
+https://www.tecoed.co.uk/lamp-prank.html
+
+https://www.comparitech.com/blog/vpn-privacy/raspberry-pi-vpn/#:~:text=Pi%20VPN%20is%20a%20lightweight,mobile%20devices%20and%20your%20network.
+Accessing your local network from outside via VPN
