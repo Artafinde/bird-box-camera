@@ -22,11 +22,6 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
 
-# Turn off all pixels and exit
-pixels.fill((0,0,0));
-pixels.show()
-#exit()
-
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
