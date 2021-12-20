@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 
-led_pin = 18
+led_pin = 14
 
 led_logic = int(input('\nEnter 1 to turn pin '+str(led_pin)+' on, or 0 to turn off\n'))
 
