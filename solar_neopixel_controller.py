@@ -4,6 +4,9 @@ from astral.sun import sun
 import board
 import neopixel
 
+# Time (seconds) after sunrise and before sunset to switch neopixels
+neopixel_lag =  30*60 #half an hour seems reasonable
+
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
@@ -17,7 +20,7 @@ ORDER = neopixel.GRB
 
 #Create pixels object
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.03, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.02, auto_write=False, pixel_order=ORDER
 )
 
 #Create sun object for Oxford today
@@ -44,7 +47,7 @@ dusk = s["dusk"].timestamp()
 time_now = datetime.now().timestamp()
 
 #Compare current time to today's solar cycle, and act accordingly
-if time_now<sunrise or time_now>=sunset:
+if time_now<(sunrise+neopixel_lag) or time_now>=(sunset-neopixel_lag):
     #Nighttime, so set all colours to zero
     r=0
     g=0
@@ -56,10 +59,13 @@ elif time_now>=sunrise and time_now<sunset:
     r=255
     g=255
     b=255
-    print("it is dawn")
+    print("it is day")
 
 #Set neopixel colours
-pixels.fill((r,g,b))
+pixels[0] = (r,g,b)
+pixels[7] = (r,g,b)
+for i in range(1,7):
+    pixels[i] = (0,0,0)
 pixels.show()
 exit()
 
