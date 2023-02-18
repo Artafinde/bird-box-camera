@@ -5,7 +5,7 @@ import board
 import neopixel
 
 # Time (seconds) after sunrise and before sunset to switch neopixels
-neopixel_lag =  30*60 #half an hour seems reasonable
+neopixel_lag =  60*60 #1 hour seems reasonable
 
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
@@ -20,7 +20,7 @@ ORDER = neopixel.GRB
 
 #Create pixels object
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.02, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.05, auto_write=False, pixel_order=ORDER
 )
 
 #Create sun object for Oxford today
@@ -62,10 +62,8 @@ elif time_now>=sunrise and time_now<sunset:
     print("it is day")
 
 #Set neopixel colours
-pixels[0] = (r,g,b)
-pixels[7] = (r,g,b)
-for i in range(1,7):
-    pixels[i] = (0,0,0)
+for i in range(0,7):
+    pixels[i] = (r,g,b)
 pixels.show()
 exit()
 
